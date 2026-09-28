@@ -1,0 +1,1617 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NIST University</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f1eb;
+            color: #20252b;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .container {
+            width: 88%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            background: #111820;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 3px solid #e8a33a;
+        }
+
+        .navbar {
+            min-height: 75px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo {
+            width: 43px;
+            height: 43px;
+            background: #e8a33a;
+            color: #111820;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .brand h1 {
+            font-size: 20px;
+            letter-spacing: 1px;
+        }
+
+        .brand small {
+            display: block;
+            color: #aeb7bf;
+            font-size: 10px;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 13px;
+            color: #d8dde1;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #e8a33a;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 620px;
+            background: #111820;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border: 45px solid #e8a33a;
+            border-radius: 50%;
+            right: -130px;
+            top: -130px;
+            opacity: 0.15;
+        }
+
+        .hero-content {
+            min-height: 620px;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .hero-text {
+            position: relative;
+            z-index: 2;
+        }
+
+        .small-title {
+            color: #e8a33a;
+            font-size: 13px;
+            letter-spacing: 4px;
+            margin-bottom: 18px;
+        }
+
+        .hero h2 {
+            font-size: clamp(45px, 7vw, 82px);
+            line-height: 0.95;
+            margin-bottom: 25px;
+            font-weight: 800;
+        }
+
+        .hero h2 span {
+            color: #e8a33a;
+        }
+
+        .hero p {
+            max-width: 530px;
+            color: #b9c1c7;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .hero-button {
+            display: inline-block;
+            background: #e8a33a;
+            color: #111820;
+            padding: 12px 25px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .hero-button:hover {
+            background: white;
+        }
+
+        .hero-image {
+            height: 430px;
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .image-label {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            background: #e8a33a;
+            color: #111820;
+            padding: 18px 25px;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           SECTION STYLE
+        ========================= */
+
+        section {
+            padding: 90px 0;
+        }
+
+        .section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 45px;
+        }
+
+        .section-number {
+            color: #e8a33a;
+            font-size: 13px;
+            letter-spacing: 3px;
+            font-weight: bold;
+        }
+
+        .section-heading h2 {
+            font-size: 42px;
+            line-height: 1;
+            margin-top: 8px;
+        }
+
+        .section-heading p {
+            max-width: 380px;
+            color: #777;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        #about {
+            background: #f4f1eb;
+        }
+
+        .about-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .about-main {
+            font-size: 19px;
+            line-height: 1.8;
+        }
+
+        .about-main::first-letter {
+            font-size: 60px;
+            float: left;
+            line-height: 45px;
+            padding-right: 8px;
+            color: #e8a33a;
+            font-weight: bold;
+        }
+
+        .about-points {
+            border-left: 2px solid #e8a33a;
+            padding-left: 30px;
+        }
+
+        .point {
+            margin-bottom: 28px;
+        }
+
+        .point h3 {
+            margin-bottom: 6px;
+            font-size: 21px;
+        }
+
+        .point p {
+            color: #666;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           COURSES
+        ========================= */
+
+        #courses {
+            background: #111820;
+            color: white;
+        }
+
+        #courses .section-heading p {
+            color: #aeb7bf;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .course-card {
+            min-height: 280px;
+            padding: 28px;
+            background: #1a242d;
+            border: 1px solid #303a43;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .course-card:nth-child(even) {
+            transform: translateY(25px);
+        }
+
+        .course-card:hover {
+            transform: translateY(-8px);
+            border-color: #e8a33a;
+        }
+
+        .course-card:nth-child(even):hover {
+            transform: translateY(15px);
+        }
+
+        .course-number {
+            font-size: 12px;
+            color: #e8a33a;
+            letter-spacing: 2px;
+        }
+
+        .course-card h3 {
+            font-size: 25px;
+            margin: 45px 0 12px;
+        }
+
+        .course-card p {
+            color: #aeb7bf;
+            font-size: 13px;
+        }
+
+        .course-card::after {
+            content: "→";
+            position: absolute;
+            bottom: 22px;
+            right: 25px;
+            font-size: 22px;
+            color: #e8a33a;
+        }
+
+
+        /* =========================
+           FACULTY
+        ========================= */
+
+        #faculty {
+            background: white;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: #111820;
+            color: white;
+            text-align: left;
+            padding: 17px;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        td {
+            padding: 18px;
+            border-bottom: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        tr:hover td {
+            background: #f5f0e7;
+        }
+
+        td:first-child {
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           FACILITIES
+        ========================= */
+
+        #facilities {
+            background: #e8a33a;
+        }
+
+        .facility-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 12px;
+        }
+
+        .facility {
+            background: #111820;
+            color: white;
+            min-height: 190px;
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .facility:nth-child(1) {
+            grid-column: span 2;
+        }
+
+        .facility:nth-child(2) {
+            grid-column: span 2;
+        }
+
+        .facility:nth-child(3) {
+            grid-column: span 2;
+        }
+
+        .facility:nth-child(4) {
+            grid-column: span 3;
+        }
+
+        .facility:nth-child(5) {
+            grid-column: span 3;
+        }
+
+        .facility span {
+            color: #e8a33a;
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        .facility h3 {
+            font-size: 22px;
+        }
+
+        .facility p {
+            color: #aeb7bf;
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           ADMISSION
+        ========================= */
+
+        #admission {
+            background: #f4f1eb;
+        }
+
+        .form-layout {
+            display: grid;
+            grid-template-columns: 0.7fr 1.3fr;
+            gap: 60px;
+        }
+
+        .form-intro h3 {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .form-intro p {
+            color: #666;
+            font-size: 15px;
+        }
+
+        .form-box {
+            background: white;
+            padding: 35px;
+            border-top: 5px solid #e8a33a;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #ccc;
+            font-family: inherit;
+            background: #fafafa;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #e8a33a;
+        }
+
+        .options {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .options label {
+            font-weight: normal;
+        }
+
+        .options input {
+            width: auto;
+            margin-right: 4px;
+        }
+
+        .form-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            border: none;
+            padding: 12px 24px;
+            background: #111820;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #e8a33a;
+            color: #111820;
+        }
+
+        .reset {
+            background: #ddd;
+            color: #333;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        #contact {
+            background: #111820;
+            color: white;
+        }
+
+        #contact .section-heading p {
+            color: #aeb7bf;
+        }
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 25px;
+        }
+
+        .contact-details {
+            border: 1px solid #303a43;
+            padding: 30px;
+        }
+
+        .contact-details div {
+            padding: 18px 0;
+            border-bottom: 1px solid #303a43;
+        }
+
+        .contact-details div:last-child {
+            border-bottom: none;
+        }
+
+        .contact-details small {
+            color: #e8a33a;
+            letter-spacing: 2px;
+        }
+
+        .contact-details p {
+            margin-top: 5px;
+            color: #d5dbe0;
+        }
+
+        .map iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 350px;
+            border: none;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #080d12;
+            color: #89939c;
+            padding: 22px;
+            text-align: center;
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           RESPONSIVE DESIGN
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .navbar {
+                flex-direction: column;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                padding: 70px 0;
+            }
+
+            .hero {
+                min-height: auto;
+            }
+
+            .hero-content {
+                min-height: auto;
+            }
+
+            .hero-image {
+                height: 300px;
+            }
+
+            .about-layout,
+            .form-layout,
+            .contact-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .course-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .facility-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .facility:nth-child(n) {
+                grid-column: span 1;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .container {
+                width: 92%;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .section-heading {
+                display: block;
+            }
+
+            .section-heading h2 {
+                font-size: 34px;
+                margin-bottom: 15px;
+            }
+
+            .hero h2 {
+                font-size: 48px;
+            }
+
+            .hero-image {
+                height: 250px;
+            }
+
+            .course-grid,
+            .facility-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .course-card:nth-child(even) {
+                transform: none;
+            }
+
+            .course-card:nth-child(even):hover {
+                transform: translateY(-8px);
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .form-box {
+                padding: 22px;
+            }
+
+            table {
+                min-width: 650px;
+            }
+
+            nav ul {
+                gap: 9px;
+            }
+
+            nav a {
+                font-size: 11px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="container navbar">
+
+            <div class="brand">
+
+                <div class="logo">
+                    <img src="nist.png" alt="logo">
+                </div>
+
+                <div>
+                    <h1>NIST University</h1>
+                    <small>National Institute of Science and Technology</small>
+                </div>
+
+            </div>
+
+
+            <nav>
+
+                <ul>
+
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#faculty">Faculty</a></li>
+                    <li><a href="#facilities">Facilities</a></li>
+                    <li><a href="#admission">Admission</a></li>
+                    <li><a href="#contact">Contact</a></li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <main>
+
+
+        <!-- ================= HOME ================= -->
+
+        <section id="home" class="hero">
+
+            <div class="container hero-content">
+
+                <div class="hero-text">
+
+                    <div class="small-title">
+                        WELCOME TO NIST
+                    </div>
+
+                    <h2>
+                        LEARN.<br>
+                        BUILD.<br>
+                        <span>LEAD.</span>
+                    </h2>
+
+                    <p>
+                        A place where curiosity becomes knowledge,
+                        knowledge becomes skill, and students prepare
+                        themselves for the world ahead.
+                    </p>
+
+                    <a href="#about" class="hero-button">
+                        Explore College →
+                    </a>
+
+                </div>
+
+
+                <div class="hero-image">
+
+                    <img
+                        src="campus-building.png"
+                        alt="College campus"
+                    >
+
+                    <div class="image-label">
+                        A CAMPUS FOR IDEAS
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= ABOUT ================= -->
+
+        <section id="about">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <div class="section-number">
+                            01 / ABOUT
+                        </div>
+
+                        <h2>More than<br>just classrooms.</h2>
+                    </div>
+
+                    <p>
+                        Education is not limited to textbooks.
+                        We encourage students to question, experiment
+                        and discover their own potential.
+                    </p>
+
+                </div>
+
+
+                <div class="about-layout">
+
+                    <article class="about-main">
+
+                        NIST College is an institution dedicated to
+                        providing quality education with a balance of
+                        theory and practical learning. Students are
+                        encouraged to develop technical knowledge,
+                        creativity, communication skills and confidence.
+
+                    </article>
+
+
+                    <div class="about-points">
+
+                        <article class="point">
+
+                            <h3>Our Mission</h3>
+
+                            <p>
+                                To provide students with quality education,
+                                practical skills and an environment that
+                                encourages learning and innovation.
+                            </p>
+
+                        </article>
+
+
+                        <article class="point">
+
+                            <h3>Our Vision</h3>
+
+                            <p>
+                                To develop responsible, skilled and
+                                creative graduates who can contribute
+                                positively to society.
+                            </p>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= COURSES ================= -->
+
+        <section id="courses">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <div class="section-number">
+                            02 / COURSES
+                        </div>
+
+                        <h2>Choose your<br>direction.</h2>
+
+                    </div>
+
+                    <p>
+                        Explore our undergraduate and postgraduate
+                        programs designed around modern academic needs.
+                    </p>
+
+                </div>
+
+
+                <div class="course-grid">
+
+
+                    <article class="course-card">
+
+                        <div class="course-number">
+                            01
+                        </div>
+
+                        <h3>B.Tech<br>CSE</h3>
+
+                        <p>
+                            Programming, software development,
+                            databases, AI and modern computing.
+                        </p>
+
+                    </article>
+
+
+                    <article class="course-card">
+
+                        <div class="course-number">
+                            02
+                        </div>
+
+                        <h3>B.Tech<br>ECE</h3>
+
+                        <p>
+                            Electronics, communication systems,
+                            embedded systems and technology.
+                        </p>
+
+                    </article>
+
+
+                    <article class="course-card">
+
+                        <div class="course-number">
+                            03
+                        </div>
+
+                        <h3>B.Tech<br>EEE</h3>
+
+                        <p>
+                            Electrical systems, electronics,
+                            power systems and engineering.
+                        </p>
+
+                    </article>
+
+
+                    <article class="course-card">
+
+                        <div class="course-number">
+                            04
+                        </div>
+
+                        <h3>MCA</h3>
+
+                        <p>
+                            Advanced computer applications,
+                            programming and software technologies.
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= FACULTY ================= -->
+
+        <section id="faculty">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <div class="section-number">
+                            03 / FACULTY
+                        </div>
+
+                        <h2>Meet the<br>faculty.</h2>
+
+                    </div>
+
+                    <p>
+                        Experienced teachers who guide students
+                        throughout their academic journey.
+                    </p>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Faculty Name</th>
+                                <th>Department</th>
+                                <th>Designation</th>
+                                <th>Experience</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>Dr. Raj Kumar</td>
+                                <td>CSE</td>
+                                <td>Professor</td>
+                                <td>15 Years</td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>Dr. Anita Das</td>
+                                <td>ECE</td>
+                                <td>Associate Professor</td>
+                                <td>10 Years</td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>Mr. Rahul Singh</td>
+                                <td>CSE</td>
+                                <td>Assistant Professor</td>
+                                <td>5 Years</td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= FACILITIES ================= -->
+
+        <section id="facilities">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <div class="section-number">
+                            04 / CAMPUS
+                        </div>
+
+                        <h2>Life beyond<br>the classroom.</h2>
+
+                    </div>
+
+                    <p>
+                        Spaces and facilities that make campus life
+                        more comfortable and productive.
+                    </p>
+
+                </div>
+
+
+                <div class="facility-grid">
+
+
+                    <article class="facility">
+
+                        <span>01</span>
+
+                        <div>
+
+                            <h3>Computer Lab</h3>
+
+                            <p>
+                                Practical computing facilities
+                                for technical subjects.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="facility">
+
+                        <span>02</span>
+
+                        <div>
+
+                            <h3>Library</h3>
+
+                            <p>
+                                Books, journals and resources
+                                for academic study.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="facility">
+
+                        <span>03</span>
+
+                        <div>
+
+                            <h3>Smart Classroom</h3>
+
+                            <p>
+                                Technology-supported learning
+                                spaces for students.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="facility">
+
+                        <span>04</span>
+
+                        <div>
+
+                            <h3>Hostel</h3>
+
+                            <p>
+                                Comfortable accommodation
+                                for students.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="facility">
+
+                        <span>05</span>
+
+                        <div>
+
+                            <h3>Sports Complex</h3>
+
+                            <p>
+                                Facilities for sports,
+                                fitness and recreation.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= ADMISSION ================= -->
+
+        <section id="admission">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <div class="section-number">
+                            05 / ADMISSION
+                        </div>
+
+                        <h2>Start your<br>journey.</h2>
+
+                    </div>
+
+                    <p>
+                        Fill out the form below with your basic
+                        information.
+                    </p>
+
+                </div>
+
+
+                <div class="form-layout">
+
+
+                    <div class="form-intro">
+
+                        <h3>Ready to begin?</h3>
+
+                        <p>
+                            Complete the admission form with your
+                            details and select the course you are
+                            interested in.
+                        </p>
+
+                    </div>
+
+
+                    <form class="form-box">
+
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="name">
+                                    Student Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="name"
+                                    placeholder="Full name"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="email">
+                                    Email
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    placeholder="example@gmail.com"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="mobile">
+                                    Mobile Number
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="mobile"
+                                    placeholder="10 digit number"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="dob">
+                                    Date of Birth
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="dob"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Gender
+                            </label>
+
+                            <div class="options">
+
+                                <label>
+                                    <input
+                                        type="radio"
+                                        name="gender"
+                                    >
+                                    Male
+                                </label>
+
+                                <label>
+                                    <input
+                                        type="radio"
+                                        name="gender"
+                                    >
+                                    Female
+                                </label>
+
+                                <label>
+                                    <input
+                                        type="radio"
+                                        name="gender"
+                                    >
+                                    Other
+                                </label>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="course">
+                                Course
+                            </label>
+
+                            <select id="course">
+
+                                <option>
+                                    -- Select Course --
+                                </option>
+
+                                <option>
+                                    B.Tech CSE
+                                </option>
+
+                                <option>
+                                    B.Tech ECE
+                                </option>
+
+                                <option>
+                                    B.Tech EEE
+                                </option>
+
+                                <option>
+                                    MCA
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Hobbies
+                            </label>
+
+                            <div class="options">
+
+                                <label>
+                                    <input type="checkbox">
+                                    Reading
+                                </label>
+
+                                <label>
+                                    <input type="checkbox">
+                                    Sports
+                                </label>
+
+                                <label>
+                                    <input type="checkbox">
+                                    Music
+                                </label>
+
+                                <label>
+                                    <input type="checkbox">
+                                    Coding
+                                </label>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="address">
+                                Address
+                            </label>
+
+                            <textarea
+                                id="address"
+                                rows="4"
+                                placeholder="Enter your address"
+                            ></textarea>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="photo">
+                                Upload Photo
+                            </label>
+
+                            <input
+                                type="file"
+                                id="photo"
+                                accept="image/*"
+                            >
+
+                        </div>
+
+
+                        <div class="form-buttons">
+
+                            <button type="submit">
+                                Submit
+                            </button>
+
+                            <button
+                                type="reset"
+                                class="reset"
+                            >
+                                Reset
+                            </button>
+
+                        </div>
+
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= CONTACT ================= -->
+
+        <section id="contact">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <div class="section-number">
+                            06 / CONTACT
+                        </div>
+
+                        <h2>Come say<br>hello.</h2>
+
+                    </div>
+
+                    <p>
+                        Have a question? Reach out to the college
+                        through any of the following details.
+                    </p>
+
+                </div>
+
+
+                <div class="contact-layout">
+
+
+                    <address class="contact-details">
+
+
+                        <div>
+
+                            <small>ADDRESS</small>
+
+                            <p>
+                                NIST College Campus,<br>
+                                Main Road, Berhampur,<br>
+                                Odisha, India
+                            </p>
+
+                        </div>
+
+
+                        <div>
+
+                            <small>PHONE</small>
+
+                            <p>
+                                +91 98765 43210
+                            </p>
+
+                        </div>
+
+
+                        <div>
+
+                            <small>EMAIL</small>
+
+                            <p>
+                                info@nistcollege.edu
+                            </p>
+
+                        </div>
+
+
+                    </address>
+
+
+                    <div class="map">
+
+                        <iframe
+                            src="https://www.google.com/maps?q=Berhampur,Odisha&output=embed"
+                            loading="lazy">
+                        </iframe>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 NIST College | Designed for learning and growth.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
+
